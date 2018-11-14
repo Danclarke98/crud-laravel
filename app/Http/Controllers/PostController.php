@@ -42,7 +42,7 @@ class PostController extends Controller
 
         ]);
         Post::create($request->all());
-        return redirect()->route('post.index')->with('success','new post created');
+        return redirect()->route('post.index')->with('Success','new post created');
     }
 
     /**
@@ -66,7 +66,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('post.update', compact('post'));
     }
 
     /**
@@ -78,7 +79,16 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+
+        ]);
+        $post = Post::find($id);
+        $post -> title = $request->get('title');
+        $post -> content = $request->get('content');
+        $post -> save();
+        return redirect()->route('post.index')->with('Success','post successfully updated');
     }
 
     /**
@@ -89,6 +99,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->route('post.index')->with('Success',"Post Deleted");
     }
 }

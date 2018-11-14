@@ -11,16 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('post.index');
-});
-
-Route::get('/test', function () {
-    return "test";
-});
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::resource('post', 'PostController');

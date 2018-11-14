@@ -13,8 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <div class="col-md-12">
+                        <h3>You are logged in!</h3>
+                        <br>
+                        <a href="{{ route('post.index') }}" class="btn btn-sm btn-success">Go to crud application</a>
+                       
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@
                 <td>{{ $post -> content}}</td>
                     <td>
                         <form action= "{{ route('post.destroy', $post->id) }}" method= "post">
-                        <a class="btn btn-sm btn-success" href= "{{ route('post.show',$post->id) }}"> Show </a>
+                        <a class="btn btn-sm btn-success" href= "{{ route('post.show',$post->id) }}"> Read </a>
                         <a class="btn btn-sm btn-warning" href= "{{ route('post.edit',$post->id) }}"> Edit </a>
                             @csrf
                             @method('DELETE')

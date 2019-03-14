@@ -57,6 +57,13 @@
                                     {{ __('Login') }}
                                 </button>
 
+
+                                <a href="login/github" class="btn btn-primary" >
+                                <button  class="btn btn-primary" >
+                                    Login with Github
+                                </button>
+                            </a>
+
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
